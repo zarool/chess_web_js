@@ -1,20 +1,27 @@
 body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background-color: #b1a296;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
 }
 
-#mainChessBoard {
-  width: 55vw;
-  height: 55vw;
+#chessBoard {
+  margin: 1em;
+  width: 600px;
   border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  .cell {
+    padding: 0.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
-.grid {
-  width: 12.5%;
-  height: 12.5%;
-  float: left;
+@media (max-width: 600px) {
 }
