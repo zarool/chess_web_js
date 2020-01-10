@@ -1,4 +1,4 @@
-import Image from "../assets/images/white/white-king.svg";
+import Image from "../assets/images/chess-board.png";
 
 export default class Cell {
   constructor(id, color, isOccupied) {

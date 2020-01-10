@@ -11,6 +11,10 @@ export default class Board {
     window.addEventListener("resize", this.updateBoardHeight);
   }
 
+  setPieces() {
+    //funkcja do ustawienia wszystkich pionków :)))))))
+  }
+
   initialize() {
     for (let i = 0; i < this.cols * this.rows; i++) {
       const cellColor = parseInt(i / 8 + i) % 2 == 0 ? "#251300" : "#fdf3c7";
