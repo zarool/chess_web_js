@@ -1,13 +1,12 @@
-import Image from "../assets/images/chess-board.png";
+import Queen from "./pieces/Queen";
 
 export default class Cell {
-  constructor(id, color, isOccupied) {
+  constructor(id, color, piece) {
     this.id = id;
     this.color = color;
-    this.imgPath = Image;
-    this.isOccupied = isOccupied;
+    this.isOccupied = piece ? true : false;
     this.box = document.createElement("div");
-
+    this.piece = piece;
     this.setElement();
   }
 
@@ -15,15 +14,23 @@ export default class Cell {
     this.imgPath = img;
   }
 
+  setPiece(piece) {
+    this.piece = piece;
+    const image = new Image();
+    image.src = piece.img;
+    this.box.appendChild(image);
+  }
+
+  removePiece() {
+    this.piece = null;
+    // this.box.
+  }
+
   setElement() {
     this.box.classList.add("cell");
-    this.box.addEventListener("click", () => console.log(this.id));
+    this.box.addEventListener("click", () => console.log());
     this.box.style.backgroundColor = this.color;
     this.box.setAttribute("id", this.id);
-
-    const img = document.createElement("img");
-    img.src = this.imgPath;
-    this.box.appendChild(img);
   }
 
   getElement() {
